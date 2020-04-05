@@ -1,3 +1,4 @@
+<?php include('./helloworld.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,22 +16,26 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="carousel.css" />
+    <!-- fontawesome -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
       integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
       crossorigin="anonymous"
     />
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>DRPerformance</title>
+  <title>DRP - Home</title>
   </head>
   <body id="home">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" id="nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent" id="nav">
       <div class="container">
         <a class="navbar-brand" href="#top"
           ><img
-            src="/images/logos/logo_long.png"
+            src="./images/logos/logo.png"
             id="navLogo"
             class="img-fluid logo_navbar"
             alt="logo DRPerformance DRP"
@@ -60,6 +65,9 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#footer">Contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="gallery.html">Galerie</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -81,51 +89,7 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-          <!-- Slide One - Set the background image for this slide in the line below -->
-          <div
-            class="carousel-item active"
-            style="background-image: url('/images/m3_front.jpg')"
-          >
-            <div class="carousel-caption">
-              <h2 class="display-4">La solution pour votre auto !</h2>
-              <p class="lead">Spécialiste toutes marques Allemandes</p>
-            </div>
-          </div>
-          <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div
-            class="carousel-item"
-            style="background-image: url('/images/m3_back.jpg')"
-          >
-            <div class="carousel-caption">
-              <h2 class="display-4">Reprogrammation ECU</h2>
-              <p class="lead">Plus de puissance, moins de consommation !</p>
-            </div>
-          </div>
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div
-            class="carousel-item"
-            style="background-image: url('/images/interieur.jpg')"
-          >
-            <div class="carousel-caption">
-              <h2 class="display-4">Electronique</h2>
-              <p class="lead">
-                Effacement DTC – Codage – Clonage de calculateur
-              </p>
-            </div>
-          </div>
-          <div
-            class="carousel-item"
-            style="background-image: url('/images/a3.jpg')"
-          >
-            <div class="carousel-caption">
-              <h2 class="display-4">
-                Spécialiste Allemandes et toutes marques
-              </h2>
-              <p class="lead">
-                Révision – Entretien – Freinage – Montage pièces compétitions.
-              </p>
-            </div>
-          </div>
+          <?php include('initcarousel.php'); ?>
         </div>
         <a
           class="carousel-control-prev"
@@ -222,7 +186,7 @@
         </div>
         <div class="col-md-5 align-self-center">
           <img
-            src="/images/benz.jpg"
+            src="./images/benz.jpg"
             class="img-fluid"
             alt="Responsive image"
           />
@@ -265,7 +229,7 @@
           </p>
         </div>
         <div class="col-md-5 order-md-1 align-self-center">
-          <img src="/images/amg.jpg" class="img-fluid" alt="Responsive image" />
+          <img src="./images/amg.jpg" class="img-fluid" alt="Responsive image" />
         </div>
       </div>
 
@@ -284,7 +248,7 @@
           </p>
         </div>
         <div class="col-md-5  align-self-center">
-          <img src="/images/r8.jpg" class="img-fluid" alt="Responsive image" />
+          <img src="./images/r8.jpg" class="img-fluid" alt="Responsive image" />
         </div>
       </div>
       <div class="row pt-5">
@@ -376,7 +340,7 @@
         <div class="row">
           <div class="col-12 col-md">
             <img
-              src="/images/logos/logo_carre.png"
+              src="./images/logos/logo.png"
               class="img-fluid"
               alt="logo DRPerformance DRP"
               style="max-width:200px;"
@@ -394,23 +358,20 @@
               <address>
                 <a href="tel:+33524624744">05 24 62 47 44</a> <br>
                 <a href="tel:+33524624744">06 33 33 44 27</a> <br>
-                <a href="mailto:contact@drperformance.fr"
-                  >contact@drperformance.fr</a
-                >
+                <a href="mailto:drperformance@orange.fr">drperformance@orange.fr</a> <br>
+                <a href="https://www.facebook.com/drperformance/"><img src="./images/Facebook.png"/></a> <br>
+                <!-- <a href="#"><img src="./images/Instagram.png"/></a> <br> -->
               </address>
             </div>
           </div>
           <div class="col-12 col-md">
               <h5>Spécialités</h5>
-              <ul class="list-unstyled text-small">
-                <li class="text-muted">Reprogrammation ECU</a></li>
-                <li
-                 class="text-muted">Diagnostic partiel ou complet</a>
-                </li>
-                <li
-                 class="text-muted">Remise à zéro de code erreur</a>
-                </li>
-                <li class="text-muted">Entretien / Réparation</a></li>
+              <ul class="list text-small">
+                <li class="text-muted">Mise au point moteur sur banc de puissance</a></li>
+                <li class="text-muted">Reprogrammation ECU (Calculateur moteur)</a></li>
+                <li class="text-muted">Reprogrammation TCU (Boite automatique)</a></li>
+                <li class="text-muted">Diagnostic électronique toutes marques</a></li>
+                <li class="text-muted">Réparation crash airbag</a></li>
               </ul>
             </div>
           <div class="col-12 col-md">
@@ -427,6 +388,7 @@
           </div>
           
         </div>
+
       </footer>
     </div>
     <!-- Optional JavaScript -->
