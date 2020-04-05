@@ -112,7 +112,6 @@ hr {
 .fa {
   padding: 20px;
   font-size: 30px;
-<<<<<<< HEAD:style.css
   /* width: 30px; */
   text-align: center;
   text-decoration: none;
@@ -122,17 +121,6 @@ hr {
 
 .fa:hover {
     opacity: 0.7;
-=======
-  width: 30px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  /* border-radius: 50%; */
-}
-
-.fa:hover {
-  opacity: 0.7;
->>>>>>> c2ffdaf458852540aca29e9397d082f8bab68462:carousel.css
 }
 
 .fa-facebook {
@@ -140,7 +128,6 @@ hr {
   color: white;
 }
 
-<<<<<<< HEAD:style.css
 .iframe-container {
   overflow: hidden;
   /* Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625) */
@@ -155,9 +142,4 @@ hr {
    position: absolute;
    top: 0;
    width: 100%;
-=======
-.fa-instagram {
-  background: #125688;
-  color: white;
->>>>>>> c2ffdaf458852540aca29e9397d082f8bab68462:carousel.css
 }
