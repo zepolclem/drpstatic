@@ -4,6 +4,7 @@
  
 //This function gets the file names of all images in the current directory
 function CreateCarouselItems($dirname="images/pub") {
+    echo "CreateCarouselItems";
     $pattern="*.jpg"; //valid image extensions
     $files = array();
     $curimage=0;
