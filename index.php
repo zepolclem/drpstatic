@@ -4,13 +4,13 @@
     <title>DRP - Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
- 
+
     <link rel="stylesheet" href="css/animate.css">
-    
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -59,7 +59,7 @@
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	    
+
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="fa fa-bars"></span> Menu
 	      </button>
@@ -86,7 +86,31 @@
 	    <div class="home-slider owl-carousel">
 
 			<!-- Creation du carousel -->
-			<?php include("./InitCarousel.php"); ?>
+			<?php
+
+			function CreateCarouselItems($dirname="images/pub") {
+    $pattern="*.jpg"; //valid image extensions
+    $files = array();
+    $curimage=0;
+    if($handle = opendir($dirname)) {
+        while(false !== ($file = readdir($handle))){
+            if(fnmatch($pattern, $file)){ //if this file is a valid image
+
+                $path = '/'.$dirname.'/'.$file.'';
+                echo '<div class="slider-item" style="background-image: url(\''.$path.'\');">';
+                echo '<div class="overlay"></div>';
+                echo '</div>';
+                $curimage++;
+            }
+        }
+
+        closedir($handle);
+    }
+		return($files);
+	}
+CreateCarouselItems() //Feed carousel
+ ?>
+
 
 	      <!-- <div class="slider-item" style="background-image:url(images/bg_2.jpg);">
 	      	<div class="overlay"></div>
@@ -104,7 +128,7 @@
 	      </div> -->
 	    </div>
 	  </div>
-		
+
 		<!-- <section class="intro">
 			<div class="container intro-wrap">
 				<div class="row no-gutters">
@@ -118,7 +142,7 @@
 						<a href="#" class="bg-primary btn-custom d-flex align-items-center"><span>Book an Appointment</span></a>
 					</div>
 				</div>
-			</div>	
+			</div>
 		</section> -->
 
     <section class="ftco-section">
@@ -150,7 +174,7 @@
                 <p>La reprogrammation de la méchatronic de DSG permet en plus le décalage du rupteur (régime maximal), suppression du kick-down, une diminution du temps de passage des rapports, gestion du launch control etc...</p>
                 <!-- <p><a href="#" class="btn-custom">Read more</a></p> -->
               </div>
-            </div> 
+            </div>
 
           </div>
           <div class="col-md-4 services ftco-animate">
@@ -163,7 +187,7 @@
                 <p>Selon le mode de conduite, des économies de carburant de 20 % sont possibles, ce qui permet d’amortir rapidement le coût du tuning.</p>
                 <!-- <p><a href="#" class="btn-custom">Read more</a></p> -->
               </div>
-            </div> 
+            </div>
             <div class="d-block d-flex">
               <div class="icon d-flex justify-content-center align-items-center">
             		<span class="flaticon-piston"></span>
@@ -173,7 +197,7 @@
                 <p>Adoptez le choix du biocarburant et roulez vert avec un cout moyen de 0,60 centimes du litres l'ethanol est une solution tres avantageuse.</p>
                 <!-- <p><a href="#" class="btn-custom">Read more</a></p> -->
               </div>
-            </div>    
+            </div>
           </div>
 
           <div class="col-md-4 services ftco-animate">
@@ -196,12 +220,12 @@
                 <p>Nous sommes en mesure de vous fournir les meilleurs services pour regler vos probleme de systeme de polution allez au controle technique l'esprit libre.</p>
                 <!-- <p><a href="#" class="btn-custom">Read more</a></p> -->
               </div>
-            </div>       
+            </div>
           </div>
         </div>
     	</div>
     </section>
-   	
+
     <!-- <section class="ftco-section ftco-no-pt ftco-no-pb bg-light">
     	<div class="container">
     		<div class="row d-flex no-gutters">
@@ -457,7 +481,7 @@
         </div>
       </div>
     </section>
-		
+
 		<!-- <section class="ftco-section">
       <div class="container">
         <div class="row justify-content-center pb-5 mb-3">
@@ -533,7 +557,7 @@
 	            <div class="text-center">
             	<span class="excerpt d-block">Eco Tuning</span>
 	            <span class="price"><sup>A partir de</sup> <span class="number">390&euro;</span></span>
-	            
+
 	            <div class="pricing-text">
 	              <p>Selon le mode de conduite, des économies de carburant de 20 % sont possibles, ce qui permet d’amortir rapidement le coût du tuning.</p>
 	            </div>
@@ -547,7 +571,7 @@
 	            <div class="text-center">
             	<span class="excerpt d-block">Stage I, II & III</span>
 	            <span class="price"><sup>A partir de</sup> <span class="number">390&euro;</span></span>
-	            
+
 	            <div class="pricing-text">
                 <p>La reprogrammation consiste à optimiser le logiciel de l’ordinateur du moteur afin d'obtenir un meilleur rendement énergétique et une augmentation de puissance motrice tout en diminuant la consommation de celui-ci.</p></p>
 	            </div>
@@ -561,7 +585,7 @@
 	            <div class="text-center">
             	<span class="excerpt d-block">Flex Fuel</span>
 	            <span class="price"><sup>A partir de</sup> <span class="number">480&euro;</span></span>
-	            
+
 	            <div class="pricing-text">
 	              <p>Adoptez le choix du biocarburant et roulez vert avec un cout moyen de 0,60 centimes du litres l'ethanol est une solution tres avantageuse.</p>
 	            </div>
@@ -575,7 +599,7 @@
 	            <div class="text-center">
             	<span class="excerpt d-block">(DSG) Stage I, II & III</span>
 	            <span class="price"><sup>A partir de</sup> <span class="number">290&euro;</span></span>
-	            
+
 	            <div class="pricing-text">
 	              <p>La reprogrammation de la méchatronic de DSG permet en plus le décalage du rupteur (régime maximal), suppression du kick-down, une diminution du temps de passage des rapports, gestion du launch control etc...</p>
 	            </div>
@@ -654,7 +678,7 @@
           </div>
         </div>
 			</div>
-		</section>	
+		</section>
 
     <footer class="footer ftco-section">
       <div class="container">
@@ -724,8 +748,8 @@
         </div>
       </div>
     </footer>
-    
-  
+
+
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -747,6 +771,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
+
   </body>
 </html>
