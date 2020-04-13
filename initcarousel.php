@@ -10,14 +10,10 @@ function CreateCarouselItems($dirname="images/pub") {
     if($handle = opendir($dirname)) {
         while(false !== ($file = readdir($handle))){
             if(fnmatch($pattern, $file)){ //if this file is a valid image
-                //Output it as a JavaScript array element
-                // echo 'galleryarray['.$curimage.']="'.$file .'";';
+               
                 $path = '/'.$dirname.'/'.$file.'';
-                if ($curimage == 0) {
-                    echo '<div class="carousel-item active" style="background-image: url(\''.$path.'\')">';
-                }else {
-                    echo '<div class="carousel-item" style="background-image: url(\''.$path.'\')">';
-                }
+                echo '<div class="slider-item" style="background-image: url(\''.$path.'\');">';
+                echo '<div class="overlay"></div>';
                 echo '</div>';
                 $curimage++;
             }
