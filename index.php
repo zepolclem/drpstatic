@@ -86,7 +86,7 @@
 	    <div class="home-slider owl-carousel">
 
 			<!-- Creation du carousel -->
-			<?php include("InitCarousel.php"); ?>
+			<?php include("./InitCarousel.php"); ?>
 
 	      <!-- <div class="slider-item" style="background-image:url(images/bg_2.jpg);">
 	      	<div class="overlay"></div>
